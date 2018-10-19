@@ -16,5 +16,10 @@ namespace WinForm2018_10_19
         {
             InitializeComponent();
         }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

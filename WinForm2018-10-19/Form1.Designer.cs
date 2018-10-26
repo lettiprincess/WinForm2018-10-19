@@ -36,12 +36,14 @@
             this.DTP = new System.Windows.Forms.DateTimePicker();
             this.nevTB = new System.Windows.Forms.TextBox();
             this.kedvencekLabel = new System.Windows.Forms.Label();
-            this.KedvencekTB = new System.Windows.Forms.TextBox();
             this.ujakLabel = new System.Windows.Forms.Label();
             this.ujakTB = new System.Windows.Forms.TextBox();
             this.hozzaadButton = new System.Windows.Forms.Button();
             this.mentesButton = new System.Windows.Forms.Button();
             this.betoltButton = new System.Windows.Forms.Button();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.kedvencekLB = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // nevLabel
@@ -81,7 +83,7 @@
             this.noRB.TabStop = true;
             this.noRB.Text = "Nő";
             this.noRB.UseVisualStyleBackColor = true;
-            this.noRB.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.noRB.CheckedChanged += new System.EventHandler(this.noRB_CheckedChanged);
             // 
             // ferfiRB
             // 
@@ -117,18 +119,10 @@
             this.kedvencekLabel.TabIndex = 7;
             this.kedvencekLabel.Text = "Kedvenc hobbi:";
             // 
-            // KedvencekTB
-            // 
-            this.KedvencekTB.Location = new System.Drawing.Point(350, 43);
-            this.KedvencekTB.Multiline = true;
-            this.KedvencekTB.Name = "KedvencekTB";
-            this.KedvencekTB.Size = new System.Drawing.Size(129, 110);
-            this.KedvencekTB.TabIndex = 8;
-            // 
             // ujakLabel
             // 
             this.ujakLabel.AutoSize = true;
-            this.ujakLabel.Location = new System.Drawing.Point(258, 170);
+            this.ujakLabel.Location = new System.Drawing.Point(258, 173);
             this.ujakLabel.Name = "ujakLabel";
             this.ujakLabel.Size = new System.Drawing.Size(64, 17);
             this.ujakLabel.TabIndex = 9;
@@ -149,6 +143,7 @@
             this.hozzaadButton.TabIndex = 11;
             this.hozzaadButton.Text = "Hozzáad";
             this.hozzaadButton.UseVisualStyleBackColor = true;
+            this.hozzaadButton.Click += new System.EventHandler(this.hozzaadButton_Click);
             // 
             // mentesButton
             // 
@@ -168,17 +163,34 @@
             this.betoltButton.Text = "Betölt";
             this.betoltButton.UseVisualStyleBackColor = true;
             // 
+            // openFileDialog
+            // 
+            this.openFileDialog.FileName = "openFileDialog1";
+            // 
+            // kedvencekLB
+            // 
+            this.kedvencekLB.FormattingEnabled = true;
+            this.kedvencekLB.ItemHeight = 16;
+            this.kedvencekLB.Items.AddRange(new object[] {
+            "Úszás",
+            "Horgászat",
+            "Futás"});
+            this.kedvencekLB.Location = new System.Drawing.Point(350, 46);
+            this.kedvencekLB.Name = "kedvencekLB";
+            this.kedvencekLB.Size = new System.Drawing.Size(129, 116);
+            this.kedvencekLB.TabIndex = 14;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(509, 280);
+            this.Controls.Add(this.kedvencekLB);
             this.Controls.Add(this.betoltButton);
             this.Controls.Add(this.mentesButton);
             this.Controls.Add(this.hozzaadButton);
             this.Controls.Add(this.ujakTB);
             this.Controls.Add(this.ujakLabel);
-            this.Controls.Add(this.KedvencekTB);
             this.Controls.Add(this.kedvencekLabel);
             this.Controls.Add(this.nevTB);
             this.Controls.Add(this.DTP);
@@ -204,12 +216,14 @@
         private System.Windows.Forms.DateTimePicker DTP;
         private System.Windows.Forms.TextBox nevTB;
         private System.Windows.Forms.Label kedvencekLabel;
-        private System.Windows.Forms.TextBox KedvencekTB;
         private System.Windows.Forms.Label ujakLabel;
         private System.Windows.Forms.TextBox ujakTB;
         private System.Windows.Forms.Button hozzaadButton;
         private System.Windows.Forms.Button mentesButton;
         private System.Windows.Forms.Button betoltButton;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
+        private System.Windows.Forms.ListBox kedvencekLB;
     }
 }
 

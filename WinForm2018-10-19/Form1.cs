@@ -45,16 +45,11 @@ namespace WinForm2018_10_19
             string tartalom = "";
             if (noRB.Checked == true)
             {
-                tartalom += "Név: " + nevTB.Text + "\nSzül. dátum: " + DTP.Text + "\nNő\nKedvenc hobbik: " + kedvencekLB.Text;
+                tartalom += nevTB.Text + "\n" + DTP.Text + "\nNő\n" + kedvencekLB.Text;
             }
             if (ferfiRB.Checked == true)
             {
-                tartalom += "Név: " + nevTB.Text + "\nSzül. dátum: " + DTP.Text + "\nFérfi\nKedvenc hobbik: " + kedvencekLB.Text;
-            }
-            
-            if (kedvencekLB.SelectedValue != null)
-            {
-                tartalom += kedvencekLB.SelectedValue;
+                tartalom += nevTB.Text + "\n" + DTP.Text + "\nFérfi\n " + kedvencekLB.Text;
             }
             adatok.Add(tartalom);
             var eredmeny = saveFileDialog.ShowDialog(this);
@@ -70,21 +65,21 @@ namespace WinForm2018_10_19
 
         private void Betolt() {
             
-           /* if (openFileDialog.ShowDialog(this) == DialogResult.OK)
+            if (openFileDialog.ShowDialog(this) == DialogResult.OK)
             {
                 String [] vissza_adatok = File.ReadAllLines(openFileDialog.FileName);
-                vissza_adatok[0] = nevTB.Text;
-                vissza_adatok[1] = DTP.Text;
+                nevTB.Text = vissza_adatok[0];
+                DTP.Text = vissza_adatok[1];
                 if (vissza_adatok[2] == "Nő")
                 {
                     noRB.Checked = true;
                 }
-                else {
+                if (vissza_adatok[2] == "Férfi")
+                {
                     ferfiRB.Checked = true;
                 }
-                vissza_adatok[4]
-
-            }*/
+                kedvencekLB.SelectedItem = vissza_adatok[3];
+            }
         }
 
         private void hozzaadButton_Click(object sender, EventArgs e)
